@@ -15,7 +15,7 @@ function menorNotaCalculoMedia(n1, n2, n3) {
         notaCorte = n3;
     }
     media = (n1 + n2 + n3 - notaCorte) /2;
-    return media;
+    return media; 
 }
 
 function situacaoAluno(media) {
