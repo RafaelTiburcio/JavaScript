@@ -7,10 +7,11 @@ const usuario = {
     nome : "Manuel Silva",
     idade : 24,
     codigoCliente : 90908080,
-    valorEmprestimo : 1500,
+    valorEmprestimo : 150000,
     taxaJuros : 7.5,
+    duracaoEmprestimo : 2,
     valorComJuros : function() {
-         return this.valorEmprestimo + (this.valorEmprestimo * (this.taxaJuros /100));
+         return this.valorEmprestimo + ((this.valorEmprestimo * (this.taxaJuros /100)) * this.duracaoEmprestimo);
         },
     bomPagador : "SIM",
 
@@ -23,8 +24,8 @@ const usuario = {
 }
 
 usuario.nome = "Rafael Tiburcio";
-usuario.valorEmprestimo = 2340;
-usuario.taxaJuros = 50;
+usuario.valorEmprestimo = 1500;
+usuario.taxaJuros = 25;
 ;console.log(usuario);
 console.log(usuario.exibir());
 
