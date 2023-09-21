@@ -8,13 +8,22 @@ Sistema de cadastro de clientes
 36 ~ 45 anos = 7%
 51 ou mais = 6%
 */
-    
-    let nomeUsuario = prompt("Digite o seu nome:");
-    let emailUsuario = prompt("Digite o seu email:");
-    let idadeUsuario = parseInt(prompt("Informe sua idade:"));
-    
-    
-     function taxaJuros() {
+  
+    let nomeUsuario;
+    let emailUsuario;
+    let idadeUsuario;
+
+    function cadastroCliente() {
+         nomeUsuario = prompt("Digite o seu nome:");
+         emailUsuario = prompt("Digite o seu email:");
+         idadeUsuario = parseInt(prompt("Informe sua idade:"));
+         return console.log(`CLiente: ${nomeUsuario}
+         Email: ${emailUsuario}
+         Idade: ${idadeUsuario}`)
+
+    }
+
+    function taxaJuros() {
         if(idadeUsuario >= 18 && idadeUsuario <= 25) {
             return 9;
         }else if(idadeUsuario > 25 && idadeUsuario <= 36) {
@@ -28,7 +37,7 @@ Sistema de cadastro de clientes
         }
     };
 
-    /*
+/*
     for(let cont = 0; cont < 3; cont++){
         valorEmprestimo = parseInt(prompt("Informe o valor solicitado;"));
         duracaoEmprestimo = parseInt(prompt("Em quantos anos deseja pagar:"));
@@ -37,9 +46,9 @@ Sistema de cadastro de clientes
            };
         console.log(`Cliente: ${nomeUsuario} | Valor solicitado: R$ ${valorEmprestimo} | Duração do emprestimo em anos: ${duracaoEmprestimo} | Valor total do emprestimo: R$ ${valorComJuros()},00 com taxa de ${taxaJuros()}% ao ano.`);
     }
-    */
+*/
    
-    /*valorEmprestimo = 1;
+/*valorEmprestimo = 1;
     while(valorEmprestimo != 0){
         valorEmprestimo = parseInt(prompt("Informe o valor solicitado;"));
         duracaoEmprestimo = parseInt(prompt("Em quantos anos deseja pagar:"));
@@ -47,9 +56,9 @@ Sistema de cadastro de clientes
             return valorEmprestimo + ((valorEmprestimo * (taxaJuros() /100)) * duracaoEmprestimo);
        };
     console.log(`Cliente: ${nomeUsuario} | Valor solicitado: R$ ${valorEmprestimo} | Duracao do emprestimo em anos: ${duracaoEmprestimo} | Valor total do emprestimo: R$ ${valorComJuros()},00 com taxa de ${taxaJuros()}% ao ano.`);
-}
-    */
-
+    }
+*/
+    cadastroCliente();
     while(true){
         valorEmprestimo = parseInt(prompt("Informe o valor solicitado;"));
         if(valorEmprestimo === 0) {
@@ -59,7 +68,7 @@ Sistema de cadastro de clientes
         function valorComJuros() {
             return valorEmprestimo + ((valorEmprestimo * (taxaJuros() /100)) * duracaoEmprestimo);
    };
-    console.log(`Cliente: ${nomeUsuario} | Valor solicitado: R$ ${valorEmprestimo} | Duracao do emprestimo em anos: ${duracaoEmprestimo} | Valor total do emprestimo: R$ ${valorComJuros()},00 com taxa de ${taxaJuros()}% ao ano.`);
+        console.log(`Valor solicitado: R$ ${valorEmprestimo} | Duracao do emprestimo em anos: ${duracaoEmprestimo} | Valor total do emprestimo: R$ ${valorComJuros()},00 com taxa de ${taxaJuros()}% ao ano.`);
 }
 
 
