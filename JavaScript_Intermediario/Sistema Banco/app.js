@@ -9,28 +9,26 @@ Sistema de cadastro de clientes
 51 ou mais = 6%
 */
   
-    let nomeUsuario;
-    let emailUsuario;
-    let idadeUsuario;
-
-    function cadastroCliente() {
-         nomeUsuario = prompt("Digite o seu nome:");
-         emailUsuario = prompt("Digite o seu email:");
-         idadeUsuario = parseInt(prompt("Informe sua idade:"));
-         return console.log(`CLiente: ${nomeUsuario}
-         Email: ${emailUsuario}
-         Idade: ${idadeUsuario}`)
+    function cadastroCliente(nome, email, idade) {
+        nome = prompt("Digite o seu nome:");
+        email = prompt("Digite o seu email:");
+        idade = parseInt(prompt("Informe sua idade:"));
+        taxa = taxaJuros(idade);
+        return console.log(`CLiente: ${nome}
+        Email: ${email}
+        Idade: ${idade}
+        Taxa de Juros: ${taxa}`)
 
     }
 
-    function taxaJuros() {
-        if(idadeUsuario >= 18 && idadeUsuario <= 25) {
+    function taxaJuros(idade){
+        if(idade >= 18 && idade <= 25) {
             return 9;
-        }else if(idadeUsuario > 25 && idadeUsuario <= 36) {
+        }else if(idade > 25 && idade <= 36) {
             return 8;
-        }else if(idadeUsuario > 36 && idadeUsuario <= 45) {
+        }else if(idade > 36 && idade <= 45) {
             return 7;
-        }else if(idadeUsuario > 45) {
+        }else if(idade > 45) {
             return 6;
         }else {
             return null;
@@ -65,10 +63,13 @@ Sistema de cadastro de clientes
             break;
         }
         duracaoEmprestimo = parseInt(prompt("Em quantos anos deseja pagar:"));
-        function valorComJuros() {
-            return valorEmprestimo + ((valorEmprestimo * (taxaJuros() /100)) * duracaoEmprestimo);
+        function valorComJuros(valorEmprestimo) {
+            let valorTaxa = valorEmprestimo + (valorEmprestimo * ((taxa /100) * duracaoEmprestimo));
+            return valorTaxa;
    };
-        console.log(`Valor solicitado: R$ ${valorEmprestimo} | Duracao do emprestimo em anos: ${duracaoEmprestimo} | Valor total do emprestimo: R$ ${valorComJuros()},00 com taxa de ${taxaJuros()}% ao ano.`);
+        console.log(`Valor solicitado: R$ ${valorEmprestimo} | Duracao do emprestimo em anos: ${duracaoEmprestimo} | Valor total do emprestimo: R$ ${valorComJuros(valorEmprestimo)},00 com taxa de ${taxa}% ao ano.`);
 }
+
+
 
 
