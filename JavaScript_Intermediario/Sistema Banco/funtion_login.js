@@ -16,3 +16,4 @@ function adicionaInfLogin(cliente, email, senha) {
 }
 
 console.log(adicionaInfLogin(cliente, "rafaeltds93@gmail.com", "32333423"));
+console.log(adicionaInfLogin(cliente, "sdasdasdassad", "sds" ));

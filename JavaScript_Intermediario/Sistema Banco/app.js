@@ -31,6 +31,19 @@ Sistema de cadastro de clientes
     };      
   
 
+    function adicionaInfLogin(cliente, email, senha) {
+        let emailCliente = prompt("Digite seu email:");
+        let senhaCliente = prompt("Digite sua senha:");
+        if (emailCliente.indexOf("@") !== -1 && senhaCliente.length > 5) {
+            login = {
+                email: emailCliente,
+                senha: senhaCliente,
+            } 
+            return login;
+        }else {
+            return "Credenciais invalidas";
+        }
+    }
 /*
     for(let cont = 0; cont < 3; cont++){
         valorEmprestimo = parseInt(prompt("Informe o valor solicitado;"));
@@ -53,7 +66,8 @@ Sistema de cadastro de clientes
     }
 */
 
- cadastroCliente();  
+cadastroCliente();
+adicionaInfLogin();  
 while(true){
         valorEmprestimo = parseInt(prompt("Informe o valor solicitado;"));
         if(valorEmprestimo === 0) {
@@ -66,6 +80,8 @@ while(true){
    };
         console.log(`Valor solicitado: R$ ${valorEmprestimo} | Duracao do emprestimo em anos: ${duracaoEmprestimo} | Valor total do emprestimo: R$ ${valorComJuros(valorEmprestimo)},00 com taxa de ${cliente.taxa()}% ao ano.`);
 }
+
+
 
 
 
